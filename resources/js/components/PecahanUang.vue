@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="card card-default">
                     <div class="card-body">
-                        Masukkan Jumlah Uang : <input type="number" v-model="uang" class="form-control">
+                        Masukkan Jumlah Uang : <input type="number" v-model="uang" class="form-control" v-on:keyup.enter="submit">
                         <button type="button" class="btn btn-success btn-sm mt-2" @click="submit(uang)">Submit</button>
                     </div>
                     <div id="output" class="px-3 pb-3">
@@ -22,7 +22,7 @@
         },
         methods:{
             submit(uang){
-                var tmpuang = uang;
+                var tmpuang = this.uang;
                 var pecahan = [100000,50000,20000,10000,5000,2000,1000,500,200,100];
                 var string = '';
 
